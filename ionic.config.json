@@ -1,0 +1,7 @@
+{
+  "name": "app-supermercado",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
