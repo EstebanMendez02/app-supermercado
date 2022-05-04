@@ -23,7 +23,19 @@ const routes: Routes = [
   {
     path: 'secciones',
     loadChildren: () => import('./pages/secciones/secciones.module').then( m => m.SeccionesPageModule)
+  },  {
+    path: 'rastreo',
+    loadChildren: () => import('./pages/rastreo/rastreo.module').then( m => m.RastreoPageModule)
   },
+  {
+    path: 'pago',
+    loadChildren: () => import('./pages/pago/pago.module').then( m => m.PagoPageModule)
+  },
+  {
+    path: 'usuario',
+    loadChildren: () => import('./pages/usuario/usuario.module').then( m => m.UsuarioPageModule)
+  },
+
 ];
 
 @NgModule({

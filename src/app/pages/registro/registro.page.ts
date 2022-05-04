@@ -15,9 +15,17 @@ export class RegistroPage implements OnInit {
 
   usuario={
       nombre: '',
+      telefono: '',
       email: '',
       contrasena: '',
       repetircontrasena: ''
+  };
+
+  direccion={
+    calle: '',
+    numeroD: '',
+    colonia: '',
+    cp: ''
   };
 
   constructor(public alertController: AlertController, public toastController: ToastController, private router: Router) { }

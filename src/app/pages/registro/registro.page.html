@@ -11,10 +11,18 @@
       <ion-list>
         <form #formulario="ngForm" (ngSubmit) = "onSubmitTemplate()">
         <ion-item>
-          <ion-label position="floating">Nombre(s):</ion-label>
+          <ion-label position="floating">Nombre:</ion-label>
           <ion-input type="text"
                      name="nombre"
                      [(ngModel)]="usuario.nombre"
+                     required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Télefono:</ion-label>
+          <ion-input type="number"
+                     name="telefono"
+                     [(ngModel)]="usuario.telefono"
                      required>
           </ion-input>
         </ion-item>
@@ -44,8 +52,47 @@
           </ion-input>
         </ion-item>
       </form>
+    </ion-list>    
+  </ion-card>
+
+  <ion-card>
+    <ion-card-title>Dirección</ion-card-title>
+    <ion-list>
+      <form #formulario="ngForm" (ngSubmit) = "onSubmitTemplate()">
+        <ion-item>
+          <ion-label position="floating">Calle:</ion-label>
+          <ion-input type="text"
+                  name="calle"
+                  [(ngModel)]="direccion.calle"
+                  required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Número:</ion-label>
+          <ion-input type="text"
+                  name="numeroD"
+                  [(ngModel)]="direccion.numeroD"
+                  required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Colonia:</ion-label>
+          <ion-input type="text"
+                  name="colonia"
+                  [(ngModel)]="direccion.colonia"
+                  required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">C.P.:</ion-label>
+          <ion-input type="text"
+                  name="cp"
+                  [(ngModel)]="direccion.cp"
+                  required>
+          </ion-input>
+        </ion-item>
+      </form>
     </ion-list>
-    
   </ion-card>
   
   <hr><hr>

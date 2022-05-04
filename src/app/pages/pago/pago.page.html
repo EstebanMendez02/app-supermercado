@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pantalla de Pago</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaulHref="/" text="cancelar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--Cómo traerme los valores que se ingresaron en la pantalla de registro-->
+
+  <h1>Tus datos</h1>
+
+  <ion-card>
+    <ion-avatar>
+      <img src="https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg">
+    </ion-avatar>
+    <ion-card-title>Usuario: </ion-card-title>
+    <!---->
+    <ion-card-subtitle>Dirección: </ion-card-subtitle>
+    <!---->
+  </ion-card>
+
+  <ion-card>
+    <ion-card-title>Forma de Pago</ion-card-title>
+    <ion-card-subtitle>Información de Tarjeta</ion-card-subtitle>
+    <ion-list>
+      <form #formulario="ngForm" (ngSubmit) = "onSubmitTemplate()">
+        <ion-item>
+          <ion-label position="floating">Titular:</ion-label>
+          <ion-input type="text"
+                  name="titular"
+                  [(ngModel)]="tarjeta.titular"
+                  required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Número:</ion-label>
+          <ion-input type="text"
+                  name="numeroT"
+                  [(ngModel)]="tarjeta.numeroT"
+                  required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Fecha de Vencimiento:</ion-label>
+          <ion-input type="text"
+                  name="caducidad"
+                  [(ngModel)]="tarjeta.caducidad"
+                  required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">CCV:</ion-label>
+          <ion-input type="password"
+                  name="cvv"
+                  [(ngModel)]="tarjeta.cvv"
+                  required>
+          </ion-input>
+        </ion-item>
+      </form>
+    </ion-list>
+  </ion-card>
+
+  <ion-button expand="full" type="submit" [disabled]="formulario.invalid" (click)="presentAlert()">¡Ordenar ahora!</ion-button>
+
+</ion-content>
