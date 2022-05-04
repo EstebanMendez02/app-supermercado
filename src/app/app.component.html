@@ -1,3 +1,40 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title routerLink='/inicio'>Inicio</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>  
+        <ion-toolbar>
+          <ion-title routerLink='/secciones'>Secciones</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/promociones'>Promociones</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/pago'>Pago</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/rastreo'>Rastreo</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/compras'>Compras</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/carrito'>Carrito</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/Lista'>Lista</ion-title>
+        </ion-toolbar>
+        <ion-toolbar>
+          <ion-title routerLink='/settings'>Settings</ion-title>
+        </ion-toolbar>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

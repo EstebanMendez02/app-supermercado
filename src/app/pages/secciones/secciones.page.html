@@ -1,9 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>secciones</ion-title>
+    <ion-title>Secciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menuId="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaulHref="/" text="atrás"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-row>
+    <ion-col size="12">
+    <ion-button routerLink='/super'>Super</ion-button>
+    </ion-col>
+    <ion-col size="12"></ion-col>
+      <ion-button routerLink='/higieneybelleza'>Higiene y Belleza</ion-button>
+    <ion-col size="12">
+      <ion-button routerLink='/bebes'>Bebés</ion-button>
+    </ion-col>
+    <ion-col size="12">
+      <ion-button routerLink='/mascotas'>Mascotas</ion-button>
+    </ion-col>
+    <ion-col size="12">
+      <ion-button routerLink='/vinosylicores'>Vinos y Licores</ion-button>
+    </ion-col>
+    <ion-col size="12">
+      <ion-button routerLink='/frutasyerduras'>Frutas y Verduras</ion-button>
+    </ion-col>
+    <ion-col size="12">
+      <ion-button routerLink='/promociones'>Promociones</ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
