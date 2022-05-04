@@ -1,0 +1,23 @@
+pantalla de:
+Inicio O
+Registro O
+Secciones O
+pago O
+Usuario O
+
+rastreo X
+carrito de compras X
+espec. nutrimentales X
+ofertas X
+hacer listas X
+comparación X
+
+funciones:
+Menú de hamburguesa O
+
+guardar los datos e importarlos en otras pantallas X
+
+Extraer los datos de la api a la página X
+
+
+DUDAS O CORRECCIONES
