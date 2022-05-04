@@ -16,6 +16,14 @@ const routes: Routes = [
     path: 'prueba',
     loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'secciones',
+    loadChildren: () => import('./pages/secciones/secciones.module').then( m => m.SeccionesPageModule)
+  },
 ];
 
 @NgModule({
