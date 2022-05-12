@@ -5,7 +5,7 @@ Secciones O
 pago O
 Usuario O
 
-rastreo X
+rastreo X (representativa, poner una barra de progreso 'ya se envió, en traslado, en entrega')
 carrito de compras X
 espec. nutrimentales X
 ofertas X

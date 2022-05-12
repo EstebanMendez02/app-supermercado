@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistroPage } from '../registro/registro.page';
 
 @Component({
   selector: 'app-usuario',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioPage implements OnInit {
 
+  usuario={
+    nombre: '',
+    telefono: '',
+    email: '',
+    contrasena: '',
+    repetircontrasena: ''
+  };
   constructor() { }
 
   ngOnInit() {
