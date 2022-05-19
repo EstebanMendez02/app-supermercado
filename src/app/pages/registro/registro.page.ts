@@ -29,7 +29,7 @@ export class RegistroPage implements OnInit {
   };
 
   constructor(public alertController: AlertController, public toastController: ToastController, private router: Router) { }
-  
+
   async presentToast() {
     const toast = await this.toastController.create({
       message: '¡Registro Exitoso!',

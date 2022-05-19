@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroPage } from '../registro/registro.page';
+import { NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-usuario',
@@ -7,15 +8,10 @@ import { RegistroPage } from '../registro/registro.page';
   styleUrls: ['./usuario.page.scss'],
 })
 export class UsuarioPage implements OnInit {
-
-  usuario={
-    nombre: '',
-    telefono: '',
-    email: '',
-    contrasena: '',
-    repetircontrasena: ''
-  };
-  constructor() { }
+  nombre='';
+  constructor() { 
+    //this.nombre = navParams.get('usuario.nombre');
+  }
 
   ngOnInit() {
   }
