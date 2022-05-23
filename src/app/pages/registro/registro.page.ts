@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, IonNavLink } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import {Router} from "@angular/router";
 
@@ -23,12 +23,16 @@ export class RegistroPage implements OnInit {
 
   direccion={
     calle: '',
-    numeroD: '',
+    numeroD: '',  
     colonia: '',
     cp: ''
   };
 
-  constructor(public alertController: AlertController, public toastController: ToastController, private router: Router) { }
+  constructor(public alertController: AlertController, public toastController: ToastController, private router: Router) { 
+
+  }
+
+ 
 
   async presentToast() {
     const toast = await this.toastController.create({

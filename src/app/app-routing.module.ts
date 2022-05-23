@@ -23,7 +23,8 @@ const routes: Routes = [
   {
     path: 'secciones',
     loadChildren: () => import('./pages/secciones/secciones.module').then( m => m.SeccionesPageModule)
-  },  {
+  },
+  {
     path: 'rastreo',
     loadChildren: () => import('./pages/rastreo/rastreo.module').then( m => m.RastreoPageModule)
   },
