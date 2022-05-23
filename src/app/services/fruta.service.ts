@@ -10,6 +10,6 @@ export class FrutaService {
   constructor( private http: HttpClient) { }
 
   getTopHeadLinesF() {
-    return this.http.get<RespuestaTopHeadlinesF>('https://api.spoonacular.com/food/ingredients/search?query=fruit&apiKey=2b1e94ad870f4658a4fe45914deb165d')
+    return this.http.get<RespuestaTopHeadlinesF>('https://api.spoonacular.com/food/menuItems/search?query=fruit&apiKey=2b1e94ad870f4658a4fe45914deb165d')
   }
 }

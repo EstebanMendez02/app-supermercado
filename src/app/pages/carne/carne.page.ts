@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'src/app/interfaces/interfaces';
 import { CarneService } from 'src/app/services/carne.service';
 
 @Component({
@@ -8,11 +9,17 @@ import { CarneService } from 'src/app/services/carne.service';
 })
 export class CarnePage implements OnInit {
 
+  carnes: MenuItem[] = [];
+
   constructor(private carneService: CarneService) { }
 
   ngOnInit() {
     this.carneService
-    .getTopHeadLinesC().subscribe(resp => {console.log('carnes', resp); });
+    .getTopHeadLinesC().subscribe(resp => {
+      console.log('carnes', resp);
+      this.carnes.push(...resp.menuItems);
+      
+    });
   }
 
 }

@@ -26,93 +26,177 @@ export interface Servings {
   unit?: any;
 }
 
-//carne
-
-export interface RootObject {
- // results: Result[];
-  offset: number;
-  number: number;
-  totalResults: number;
-}
+//CARNE
 
 export interface RespuestaTopHeadlinesC {
-  id: number;
-  name: string;
-  image: string;
+  typeC: string;
+  menuItems: MenuItem[];
+  offsetC: number;
+  numberC: number;
+  totalMenuItemsC: number;
+  processingTimeMsC: number;
+  expiresC: number;
+  isStaleC: boolean;
 }
 
-//pescado
-
-export interface RootObjectP {
-  //results: Result[];
-  offset: number;
-  number: number;
-  totalResults: number;
+export interface MenuItem {
+  idC: number;
+  titleC: string;
+  imageC: string;
+  imageTypeC: string;
+  restaurantChainC: string;
+  servingSizeC?: string;
+  readableServingSizeC?: string;
+  servingsC: ServingsC  ;
 }
+
+export interface ServingsC {
+  numberC: number;
+  sizeC?: number;
+  unitC?: string;
+}
+
+//PESCADO
 
 export interface RespuestaTopHeadlinesP {
-  id: number;
-  name: string;
-  image: string;
-}
-
-//pollo
-
-export interface RootObjectPO {
-  
-  //results: Result[];
+  type: string;
+  menuItems: MenuItem[];
   offset: number;
   number: number;
-  totalResults: number;
+  totalMenuItems: number;
+  processingTimeMs: number;
+  expires: number;
 }
+
+export interface MenuItem {
+  id: number;
+  title: string;
+  image: string;
+  imageType: string;
+  restaurantChain: string;
+  servingSizeP?: string;
+  readableServingSizeP?: string;
+  servings: Servings;
+}
+
+export interface Servings {
+  number: number;
+  sizeP?: number;
+  unitP?: string;
+}
+
+//POLLO
 
 export interface RespuestaTopHeadlinesPO {
-  id: number;
-  name: string;
-  image: string;
-}
-
-//verduras
-
-export interface RootObjectV {
-  //results: Result[];
+  type: string;
+  menuItems: MenuItem[];
   offset: number;
   number: number;
-  totalResults: number;
+  totalMenuItems: number;
+  processingTimeMs: number;
+  expires: number;
 }
+
+export interface MenuItem {
+  id: number;
+  title: string;
+  image: string;
+  imageType: string;
+  restaurantChain: string;
+  servingSizePO?: string;
+  readableServingSizePO?: string;
+  servings: Servings;
+}
+
+export interface Servings {
+  number: number;
+  sizePO?: number;
+  unitPO?: string;
+}
+
+//VERDURAS
 
 export interface RespuestaTopHeadlinesV {
-  id: number;
-  name: string;
-  image: string;
-}
-
-//frutas
-
-export interface RootObjectF {
-  //results: Result[];
+  type: string;
+  menuItems: MenuItem[];
   offset: number;
   number: number;
-  totalResults: number;
+  totalMenuItems: number;
+  processingTimeMs: number;
+  expires: number;
 }
+
+export interface MenuItem {
+  id: number;
+  title: string;
+  image: string;
+  imageType: string;
+  restaurantChain: string;
+  servingSizeV: string;
+  readableServingSizeV: string;
+  servings: Servings;
+}
+
+export interface Servings {
+  number: number;
+  sizeV?: number;
+  unitV?: string;
+}
+
+//FRUTAS
 
 export interface RespuestaTopHeadlinesF {
-  id: number;
-  name: string;
-  image: string;
-}
-
-//lacteos
-
-export interface RootObjectL {
-  //results: Result[];
+  type: string;
+  menuItems: MenuItem[];
   offset: number;
   number: number;
-  totalResults: number;
+  totalMenuItems: number;
+  processingTimeMs: number;
+  expires: number;
 }
 
-export interface RespuestaTopHeadlinesL {
+export interface MenuItem {
   id: number;
-  name: string;
+  title: string;
   image: string;
+  imageType: string;
+  restaurantChain: string;
+  servingSizeF?: string;
+  readableServingSizeF?: string;
+  servings: Servings;
+}
+
+export interface Servings {
+  number: number;
+  sizeF?: number;
+  unitF?: string;
+}
+
+//LACTEOS
+
+export interface RespuestaTopHeadlinesL {
+  type: string;
+  menuItems: MenuItem[];
+  offset: number;
+  number: number;
+  totalMenuItems: number;
+  processingTimeMs: number;
+  expires: number;
+}
+
+export interface MenuItem {
+  id: number;
+  title: string;
+  image: string;
+  imageType: string;
+  restaurantChain: string;
+  servingSizeL?: string;
+  readableServingSizeL: string;
+  servings: Servings;
+}
+
+export interface Servings {
+  number: number;
+  sizeL?: number;
+  unitL?: string;
 }

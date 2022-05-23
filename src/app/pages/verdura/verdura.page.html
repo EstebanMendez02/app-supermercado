@@ -10,6 +10,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content  color="dark" [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col  size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+             *ngFor="let verdura of verduras; let i = index">
+        <ion-card color="dark">
+          <ion-card-header>
+            <ion-card-subtitle>
+              <span> {{ i+1 }}.  </span>
+              <span>{{ verdura.title }}</span>
+            </ion-card-subtitle>
+            <ion-card-title>
+              {{ verdura.title }}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-img *ngIf="verdura.image" 
+            [src]="verdura.image">
+          </ion-img>
+          <p>
+            {{ verdura.title }}
+          </p>
+          <ion-button>Agregar al carrito</ion-button>
+        </ion-card>         
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

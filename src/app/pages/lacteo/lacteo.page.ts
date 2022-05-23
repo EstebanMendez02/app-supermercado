@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'src/app/interfaces/interfaces';
 import { LacteoService } from 'src/app/services/lacteo.service';
 
 @Component({
@@ -8,11 +9,16 @@ import { LacteoService } from 'src/app/services/lacteo.service';
 })
 export class LacteoPage implements OnInit {
 
+  lacteos: MenuItem[] = [];
+
   constructor(private lacteoService: LacteoService) { }
 
   ngOnInit() {
     this.lacteoService
-    .getTopHeadLinesL().subscribe(resp => {console.log('lacteos', resp); });
+    .getTopHeadLinesL().subscribe(resp => {
+      console.log('lacteos', resp);
+      this.lacteos.push(...resp.menuItems);
+    });
   }
 
 }

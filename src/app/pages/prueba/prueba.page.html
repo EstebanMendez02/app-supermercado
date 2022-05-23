@@ -12,4 +12,30 @@
 
 <ion-content>
 
+  <ion-content  color="dark" [fullscreen]="true">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col  size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+               *ngFor="let comida of comidas; let i = index">
+          <ion-card color="dark">
+            <ion-card-header>
+              <ion-card-subtitle>
+                <span> {{ i+1 }}.  </span>
+                <span>{{ comida.title }}</span>
+              </ion-card-subtitle>
+              <ion-card-title>
+                {{ comida.title }}
+              </ion-card-title>
+            </ion-card-header>
+            <ion-img *ngIf="comida.image" 
+              [src]="comida.image">
+            </ion-img>
+            <p>
+              {{ comida.title }}
+            </p>
+          </ion-card>         
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
 </ion-content>
