@@ -35,6 +35,30 @@ const routes: Routes = [
     path: 'usuario',
     loadChildren: () => import('./pages/usuario/usuario.module').then( m => m.UsuarioPageModule)
   },
+  {
+    path: 'carne',
+    loadChildren: () => import('./pages/carne/carne.module').then( m => m.CarnePageModule)
+  },
+  {
+    path: 'pescado',
+    loadChildren: () => import('./pages/pescado/pescado.module').then( m => m.PescadoPageModule)
+  },
+  {
+    path: 'pollo',
+    loadChildren: () => import('./pages/pollo/pollo.module').then( m => m.PolloPageModule)
+  },
+  {
+    path: 'verdura',
+    loadChildren: () => import('./pages/verdura/verdura.module').then( m => m.VerduraPageModule)
+  },
+  {
+    path: 'fruta',
+    loadChildren: () => import('./pages/fruta/fruta.module').then( m => m.FrutaPageModule)
+  },
+  {
+    path: 'lacteo',
+    loadChildren: () => import('./pages/lacteo/lacteo.module').then( m => m.LacteoPageModule)
+  },
 
 ];
 
