@@ -60,6 +60,10 @@ const routes: Routes = [
     path: 'lacteo',
     loadChildren: () => import('./pages/lacteo/lacteo.module').then( m => m.LacteoPageModule)
   },
+  {
+    path: 'carrito',
+    loadChildren: () => import('./pages/carrito/carrito.module').then( m => m.CarritoPageModule)
+  },
 
 ];
 

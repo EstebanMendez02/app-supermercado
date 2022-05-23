@@ -24,7 +24,7 @@ async presentToast() {
     duration: 2000
   });
   toast.present();
-  this.router.navigateByUrl('/inicio');
+  this.router.navigateByUrl('/rastreo');
 }
 
 ngOnInit() {
