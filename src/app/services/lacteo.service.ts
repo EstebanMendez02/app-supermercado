@@ -10,6 +10,6 @@ export class LacteoService {
   constructor( private http: HttpClient) { }
 
   getTopHeadLinesL() {
-    return this.http.get<RespuestaTopHeadlinesL>('https://api.spoonacular.com/food/menuItems/search?query=dairy&apiKey=2b1e94ad870f4658a4fe45914deb165d')
+    return this.http.get<RespuestaTopHeadlinesL>('https://api.spoonacular.com/food/menuItems/search?query=dairy&apiKey=f2ee7727bac244ff95e8b32bc3140382')
   }
 }

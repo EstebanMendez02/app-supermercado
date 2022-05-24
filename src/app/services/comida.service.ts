@@ -10,6 +10,6 @@ export class ComidaService {
   constructor( private http: HttpClient) { }
 
   getTopHeadLines() {
-    return this.http.get<RespuestaTopHeadlines>('https://api.spoonacular.com/food/menuItems/search?query=burger&number=2&apiKey=2b1e94ad870f4658a4fe45914deb165d')
+    return this.http.get<RespuestaTopHeadlines>('https://api.spoonacular.com/food/menuItems/search?query=burger&number=2&apiKey=f2ee7727bac244ff95e8b32bc3140382')
   }
 }

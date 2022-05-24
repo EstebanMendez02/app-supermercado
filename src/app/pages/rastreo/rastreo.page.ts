@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RastreoPage implements OnInit {
 
-  porcentaje = 0.5;
+  porcentaje = 0.8;
 
   constructor() { }
 

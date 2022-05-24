@@ -28,11 +28,9 @@
           </ion-card-header>
           <ion-img *ngIf="carne.image" 
             [src]="carne.image">
-          </ion-img>
-          <p>
-            {{ carne.title }}
-          </p>
-          <ion-button (click)="presentAlert(i)">Agregar al carrito</ion-button>
+          </ion-img>  
+          <ion-button (click)="presentAlert(i)" expand="full" size="large" fill="outline" id="colorL"
+          >Agregar al carrito</ion-button>
         </ion-card>         
       </ion-col>
     </ion-row>
