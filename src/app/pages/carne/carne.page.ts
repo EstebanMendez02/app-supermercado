@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { MenuItem } from 'src/app/interfaces/interfaces';
 import { CarneService } from 'src/app/services/carne.service';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-carne',
@@ -12,7 +13,10 @@ export class CarnePage implements OnInit {
 
   carnes: MenuItem[] = [];
 
-  constructor(private carneService: CarneService, public alertController: AlertController, public toastController: ToastController) { }
+  carritos: MenuItem[] = [];
+
+  product: any;
+  constructor(private carneService: CarneService, public alertController: AlertController, public toastController: ToastController, private cartService: CarritoService) { }
 
   ngOnInit() {
     this.carneService
@@ -20,6 +24,12 @@ export class CarnePage implements OnInit {
       console.log('carnes', resp);
       this.carnes.push(...resp.menuItems);
     });
+
+  }
+
+  async quitarProducto(o){
+    //this.carritos.reduce(this.carritos[o]);
+    //this.carritos.
   }
 
   async presentToast() {
@@ -30,7 +40,7 @@ export class CarnePage implements OnInit {
     toast.present();
   }
 
-  async presentAlert() {
+  async presentAlert(i) {
     const alert = await this.alertController.create({
       header: '¿Estás seguro?',
       subHeader: 'Confirma',
@@ -41,11 +51,19 @@ export class CarnePage implements OnInit {
                 },
                 {text: 'Confirmar',
                 handler: (blur)=> {
-                  console.log ('Se ha presionado el Botón CONFIRMAR');
+                  console.log ('carnes', this.carnes[i]);
                   this.presentToast();
+                  this.carritos.push(this.carnes[i]);
+                  console.log ('carritos', this.carritos);
+                  //carraje
+                  this.product = this.carnes[i].title;
+                  this.cartService.addProduct(this.product);
+                  console.log('product: ', this.product);
+                  console.log('carr', this.cartService.cart);
                   }
                 }]
     });
     await alert.present();
   }
+
 }

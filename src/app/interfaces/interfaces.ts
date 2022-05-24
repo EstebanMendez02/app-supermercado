@@ -1,3 +1,26 @@
+//CARRITO
+export interface CarritoCompra {
+  typeC: string;
+  menuItems: MenuItem[];
+  offsetC: number;
+  numberC: number;
+  totalMenuItemsC: number;
+  processingTimeMsC: number;
+  expiresC: number;
+  isStaleC: boolean;
+}
+
+export interface MenuItem {
+  idCa: number;
+  titleCa: string;
+  imageCa: string;
+  imageTypeCa: string;
+  restaurantChainCa: string;
+  servingSizeCa?: string;
+  readableServingSizeCa?: string;
+  servingsCa: ServingsC  ;
+}
+
 export interface RespuestaTopHeadlines {
   type: string;
   menuItems: MenuItem[];

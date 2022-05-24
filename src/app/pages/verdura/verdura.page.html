@@ -12,6 +12,20 @@
 
 <ion-content  color="dark" [fullscreen]="true">
   <ion-grid fixed>
+    
+    <ion-list>
+      <ion-item *ngFor="let carrito of carritos; let o = index">
+        <ion-label>
+          <span>{{o+1}}</span>
+          <span>{{carrito.title}}</span>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="full" size="large">Ir a Pagar</ion-button>
+  </ion-grid>
+  
+  <ion-grid fixed>
     <ion-row>
       <ion-col  size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
              *ngFor="let verdura of verduras; let i = index">
@@ -31,7 +45,7 @@
           <p>
             {{ verdura.title }}
           </p>
-          <ion-button (click)="presentAlert()">Agregar al carrito</ion-button>
+          <ion-button (click)="presentAlert(i)">Agregar al carrito</ion-button>
         </ion-card>         
       </ion-col>
     </ion-row>

@@ -13,3 +13,5 @@ export class InicioPage implements OnInit {
   }
 
 }
+
+export declare var carritos: Array<any>; 

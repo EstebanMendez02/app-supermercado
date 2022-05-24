@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { MenuItem } from 'src/app/interfaces/interfaces';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { LacteoService } from 'src/app/services/lacteo.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class LacteoPage implements OnInit {
 
   lacteos: MenuItem[] = [];
 
-  constructor(private lacteoService: LacteoService, public alertController: AlertController, public toastController: ToastController) { }
+  carritos: MenuItem[] = [];
+
+  product: any;
+
+  constructor(private cartService: CarritoService, private lacteoService: LacteoService, public alertController: AlertController, public toastController: ToastController) { }
 
   ngOnInit() {
     this.lacteoService
@@ -30,7 +35,7 @@ export class LacteoPage implements OnInit {
     toast.present();
   }
 
-  async presentAlert() {
+  async presentAlert(i) {
     const alert = await this.alertController.create({
       header: '¿Estás seguro?',
       subHeader: 'Confirma',
@@ -41,8 +46,15 @@ export class LacteoPage implements OnInit {
                 },
                 {text: 'Confirmar',
                 handler: (blur)=> {
-                  console.log ('Se ha presionado el Botón CONFIRMAR');
+                  console.log ('lacteos', this.lacteos[i]);
                   this.presentToast();
+                  this.carritos.push(this.lacteos[i]);
+                  console.log ('carritos', this.carritos);
+                   //carraje
+                   this.product = this.lacteos[i].title;
+                   this.cartService.addProduct(this.product);
+                   console.log('product: ', this.product);
+                   console.log('carr', this.cartService.cart);
                   }
                 }]
     });

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import {Router} from "@angular/router";
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 
 
@@ -20,7 +21,6 @@ export class RegistroPage implements OnInit {
       contrasena: '',
       repetircontrasena: ''
   };
-
   direccion={
     calle: '',
     numeroD: '',  
@@ -28,7 +28,11 @@ export class RegistroPage implements OnInit {
     cp: ''
   };
 
-  constructor(public alertController: AlertController, public toastController: ToastController, private router: Router) { 
+  nombre: any;
+  telefono: any;
+  calle: any; numero: any; colonia: any; cp: any;
+
+  constructor(private usuarioService: UsuarioService, public alertController: AlertController, public toastController: ToastController, private router: Router) { 
 
   }
 
@@ -64,6 +68,16 @@ export class RegistroPage implements OnInit {
                 handler: (blur)=> {
                   console.log ('Se ha presionado el Botón CONFIRMAR');
                   this.presentToast();
+                  //
+                  this.nombre = this.usuario.nombre;
+                  this.telefono = this.usuario.telefono;
+                  this.calle = this.direccion.calle;
+                  this.numero = this.direccion.numeroD;
+                  this.colonia = this.direccion.colonia;
+                  this.cp = this.direccion.cp;
+                  this.usuarioService.addDatoN(this.nombre);
+                  this.usuarioService.addDatoT(this.telefono);
+                  this.usuarioService.addDatoD(this.calle, this.numero, this.colonia, this.cp);
                   }
                 }]
     });

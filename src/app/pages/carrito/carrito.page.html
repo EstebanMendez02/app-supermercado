@@ -12,4 +12,16 @@
 
 <ion-content>
 
+  <ion-list>
+    <ion-item *ngFor="let carrito of selectedItems; let o = index">
+      <ion-label>
+        <span>{{o+1}}</span>
+        <span>{{carrito}}</span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="borrarCarrito()">Eliminar Carrito</ion-button>
+  <ion-button routerLink='/pago'>Pagar</ion-button>
+
 </ion-content>

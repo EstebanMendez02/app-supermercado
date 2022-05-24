@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import {Router} from "@angular/router";
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-pago',
@@ -8,6 +9,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./pago.page.scss'],
 })
 export class PagoPage implements OnInit {
+nombre: any;
+telefono: any;
+calle: any; numero: any; colonia: any; cp: any;
 
 tarjeta={
   titular: '',
@@ -16,7 +20,7 @@ tarjeta={
   cvv: ''
 };
 
-constructor(public alertController: AlertController, public toastController: ToastController, private router: Router) { }
+constructor(private usuarioService: UsuarioService, public alertController: AlertController, public toastController: ToastController, private router: Router) { }
 
 async presentToast() {
   const toast = await this.toastController.create({
@@ -28,6 +32,13 @@ async presentToast() {
 }
 
 ngOnInit() {
+  this.nombre = this.usuarioService.usu;
+  this.telefono = this.usuarioService.tel;
+  this.calle = this.usuarioService.calle;
+  this.numero = this.usuarioService.numero;
+  this.colonia = this.usuarioService.colonia;
+  this.cp = this.usuarioService.cp;
+  console.log(this.nombre, this.telefono);
 }
 
 onSubmitTemplate(){

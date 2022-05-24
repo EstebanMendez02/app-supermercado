@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { MenuItem } from 'src/app/interfaces/interfaces';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { PolloService } from 'src/app/services/pollo.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class PolloPage implements OnInit {
 
   pollos: MenuItem[] = [];
 
-  constructor(private polloService: PolloService, public alertController: AlertController, public toastController: ToastController) { }
+  carritos: MenuItem[] = [];
+
+  product: any;
+
+  constructor(private cartService: CarritoService, private polloService: PolloService, public alertController: AlertController, public toastController: ToastController) { }
 
   ngOnInit() {
     this.polloService
@@ -30,7 +35,7 @@ export class PolloPage implements OnInit {
     toast.present();
   }
 
-  async presentAlert() {
+  async presentAlert(i) {
     const alert = await this.alertController.create({
       header: '¿Estás seguro?',
       subHeader: 'Confirma',
@@ -41,8 +46,15 @@ export class PolloPage implements OnInit {
                 },
                 {text: 'Confirmar',
                 handler: (blur)=> {
-                  console.log ('Se ha presionado el Botón CONFIRMAR');
+                  console.log ('pollos', this.pollos[i]);
                   this.presentToast();
+                  this.carritos.push(this.pollos[i]);
+                  console.log ('carritos', this.carritos);
+                   //carraje
+                   this.product = this.pollos[i].title;
+                   this.cartService.addProduct(this.product);
+                   console.log('product: ', this.product);
+                   console.log('carr', this.cartService.cart);
                   }
                 }]
     });
