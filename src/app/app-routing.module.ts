@@ -67,6 +67,10 @@ const routes: Routes = [
     path: 'promocion',
     loadChildren: () => import('./pages/promocion/promocion.module').then( m => m.PromocionPageModule)
   },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
 
 
 ];
