@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-rastreo',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class RastreoPage implements OnInit {
 
   porcentaje = 0.8;
+  selectedItems = [];
 
-  constructor() { }
+  constructor(private cartService: CarritoService) { }
 
   ngOnInit() {
+    this.selectedItems = this.cartService.cart;
   }
 
 }

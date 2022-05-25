@@ -1,0 +1,21 @@
+ion-content {
+    --background: #60E9AF;
+  }
+
+ion-title {
+    background-color: #2937B1;
+    color: white;
+}
+
+ion-list {
+    background-color: linear-gradient(180deg, #2937B1 0%, #60E9AF 100%);
+}
+
+ion-toolbar {
+    --background: linear-gradient(180deg, #2937B1 0%, #60E9AF 100%);
+}
+
+#colorL {
+    color: rgba(10, 1, 1, 0.85);
+    font-size: 1.6em;
+  }

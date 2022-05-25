@@ -37,4 +37,20 @@
       </ion-col>
     </ion-row>
   </ion-card>
+
+  <hr>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Tu pedido es el siguiente: </ion-card-subtitle>
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let carrito of selectedItems; let o = index">
+        <ion-label>
+          <span>{{o+1}}</span>
+          <span>{{carrito}}</span>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>
