@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Pescado</ion-title>
+    <ion-title>Promociones</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menuId="first"></ion-menu-button>
     </ion-buttons>
@@ -14,23 +14,25 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col  size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
-             *ngFor="let pescado of pescados; let i = index">
+              *ngFor="let promocion of promociones; let i = index">
         <ion-card color="dark">
           <ion-card-header>
             <ion-card-subtitle>
               <span> {{ i+1 }}.  </span>
-              <span>{{ pescado.title }}</span>
+              <span>{{ promocion.title }}</span>
             </ion-card-subtitle>
             <ion-card-title>
-              {{ pescado.title }}
+              {{ promocion.title }}
             </ion-card-title>
           </ion-card-header>
-          <ion-img *ngIf="pescado.image" 
-            [src]="pescado.image">
-          </ion-img>
-          <ion-button (click)="presentAlert(i)" expand="full" size="large" fill="outline" id="colorL">Agregar al carrito</ion-button>
+          <ion-img *ngIf="promocion.image" 
+            [src]="promocion.image">
+          </ion-img>  
+          <ion-button (click)="presentAlert(i)" expand="full" size="large" fill="outline" id="colorL"
+          >Agregar al carrito</ion-button>
         </ion-card>         
       </ion-col>
     </ion-row>
   </ion-grid>
+    
 </ion-content>

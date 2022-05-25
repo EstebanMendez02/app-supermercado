@@ -49,6 +49,36 @@ export interface Servings {
   unit?: any;
 }
 
+//PROMOCION
+
+export interface RespuestaTopHeadlinesPR {
+  type: string;
+  menuItems: MenuItem[];
+  offset: number;
+  number: number;
+  totalMenuItems: number;
+  processingTimeMs: number;
+  expires: number;
+  isStale: boolean;
+}
+
+export interface MenuItem {
+  id: number;
+  title: string;
+  image: string;
+  imageType: string;
+  restaurantChain: string;
+  servingSizePR: string;
+  readableServingSizePR: string;
+  servings: Servings;
+}
+
+export interface Servings {
+  number: number;
+  sizePR: number;
+  unitPR: string;
+}
+
 //CARNE
 
 export interface RespuestaTopHeadlinesC {

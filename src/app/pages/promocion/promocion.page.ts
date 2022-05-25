@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ToastController } from '@ionic/angular';
 import { MenuItem } from 'src/app/interfaces/interfaces';
-import { CarneService } from 'src/app/services/carne.service';
 import { CarritoService } from 'src/app/services/carrito.service';
+import { PromocionService } from 'src/app/services/promocion.service';
 
 @Component({
-  selector: 'app-carne',
-  templateUrl: './carne.page.html',
-  styleUrls: ['./carne.page.scss'],
+  selector: 'app-promocion',
+  templateUrl: './promocion.page.html',
+  styleUrls: ['./promocion.page.scss'],
 })
-export class CarnePage implements OnInit {
+export class PromocionPage implements OnInit {
 
-  carnes: MenuItem[] = [];
+  promociones: MenuItem[] = [];
 
   carritos: MenuItem[] = [];
 
   product: any;
-  constructor(private carneService: CarneService, public alertController: AlertController, public toastController: ToastController, private cartService: CarritoService) { }
+
+  constructor(private promocionService: PromocionService, public alertController: AlertController, public toastController: ToastController, private cartService: CarritoService) { }
 
   ngOnInit() {
-    this.carneService
-    .getTopHeadLinesC().subscribe(resp => {
-      console.log('carnes', resp);
-      this.carnes.push(...resp.menuItems);
+    this.promocionService
+    .getTopHeadLinesPR().subscribe(resp => {
+      console.log('promocion', resp);
+      this.promociones.push(...resp.menuItems);
     });
-
   }
 
   async presentToast() {
@@ -46,12 +46,12 @@ export class CarnePage implements OnInit {
                 },
                 {text: 'Confirmar',
                 handler: (blur)=> {
-                  console.log ('carnes', this.carnes[i]);
+                  console.log ('promociones', this.promociones[i]);
                   this.presentToast();
-                  this.carritos.push(this.carnes[i]);
+                  this.carritos.push(this.promociones[i]);
                   console.log ('carritos', this.carritos);
                   //carraje
-                  this.product = this.carnes[i].title;
+                  this.product = this.promociones[i].title;
                   this.cartService.addProduct(this.product);
                   console.log('product: ', this.product);
                   console.log('carr', this.cartService.cart);

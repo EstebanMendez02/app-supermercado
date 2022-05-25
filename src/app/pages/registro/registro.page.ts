@@ -44,7 +44,7 @@ export class RegistroPage implements OnInit {
       duration: 2000
     });
     toast.present();
-    this.router.navigateByUrl('/inicio');
+    this.router.navigateByUrl('/secciones');
   }
 
   ngOnInit() {
